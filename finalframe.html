@@ -1,0 +1,196 @@
+
+
+        <div id="containerforyoutube">
+            <style>
+            
+            
+            .roboto {
+            font-family: "Roboto", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+            font-variation-settings:
+                "wdth" 100;
+            }
+            .cargrid-anim1{animation: horizontal-shaking 3s infinite}
+            .cargrid-anim2{animation: horizontal-shaking 2.7s infinite}
+            .cargrid-anim3{animation: horizontal-shaking 2.5s infinite}
+            .cargrid-anim4{animation: horizontal-shaking 2.8s infinite}
+
+
+            .cars{position:absolute;top:0;left:0;z-index:200;flex-shrink: 0;transition:1s}
+            .caranimation{animation:carsetmove 90s linear forwards}
+            #carracer1{margin-top:120px}
+            #carracer2{margin-top:172px}
+            #carracer3{margin-top:230px}
+            #carracer4{margin-top:288px}
+            #carracer5{margin-top:344px}
+            #carracer6{margin-top:399px}
+            #carracer7{margin-top:455px}
+            #carracer8{margin-top:513px}
+
+
+            .marquee-container {
+            overflow: hidden; /* Hides the duplicate content initially */
+            white-space: nowrap; /* Prevents text from wrapping to the next line */
+            display: flex; /* Uses flexbox for alignment */
+            box-sizing: border-box;
+            }
+
+            .marquee-content {
+            display: inline-block;
+            animation: scroll 4s linear infinite;
+            /* Ensures child items don't shrink, maintaining total width */
+            flex-shrink: 0; 
+            }
+            
+            /* Define the animation */
+            @keyframes scroll {
+            from {
+                transform: translateX(0); /* Start at original position */
+            }
+            to {
+                /* Move left by exactly half the total width (the width of one copy) */
+                transform: translateX(-50%); 
+            }
+            }
+            @keyframes horizontal-shaking {
+                0% { transform: translateY(0) }
+                25% { transform: translateY(2px) }
+                50% { transform: translateY(-2px) }
+                75% { transform: translateY(1px) }
+                100% { transform: translateY(0) }}
+
+
+            @keyframes carsetmove {
+                0% { transform: translateX(0) }
+                100% { transform: translateX(1600%) }
+            }
+        </style>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+            <div id="resultbox" style="transition:1s;opacity:0;width:100%;height:550px;background-color:rgba(0, 0, 0, 0.623);display: flex; align-items: center; justify-content: center;position:absolute;z-index:300;margin-top:100px">
+            <div style="width:300px;border-radius: 15px;background-color:rgba(0, 0, 0, 0.87);padding-top:50px;padding-bottom:50px">
+                
+                    <div style="width:100%;display:flex;justify-content: center;">
+                        <div style="width:80px;height:80px;border-radius: 50%;overflow: hidden">
+                        <img id="countryflag" src="" style="width:100%">
+                    </div>
+                    </div>
+                    <div style="width:100%;display:flex;justify-content: center;" class="roboto"><h1 id="countrydisplay" style="color:white"></h1></div>
+                
+            </div>
+        </div>
+            
+
+        <div id="main-container" style="width:100%;overflow:hidden;background-color: yellow;">
+            <div style="display:flex;justify-content: center;position: absolute; top:0;left:0;width:100%;z-index:1000;margin-top:50px">
+                <div style="background-color:rgba(0, 0, 0, 0.411);padding:5px;border-radius: 30px;display:flex">
+                    <div style="background-color:green;padding:5px;border-radius:20px;display: flex;margin:4px">
+                        <div style="height:20px;width:20px;border-radius: 50%;overflow: hidden;">
+                            <img src="https://github.com/hetube-lab/youtubegameimages/blob/main/flagind.jpg?raw=true" style="width:100%">
+                        </div>
+                        <div id="pointind" style="color:white;width:20px;text-align:center">0</div>
+                    </div>
+                    <div style="background-color:green;padding:5px;border-radius:20px;display: flex;margin:4px">
+                        <div style="height:20px;width:20px;border-radius: 50%;overflow: hidden;">
+                            <img src="https://github.com/hetube-lab/youtubegameimages/blob/main/flapak.jpg?raw=true" style="width:100%">
+                        </div>
+                        <div id="pointpak" style="color:white;width:20px;text-align:center">0</div>
+                    </div>
+                    <div style="background-color:green;padding:5px;border-radius:20px;display: flex;margin:4px">
+                        <div style="height:20px;width:20px;border-radius: 50%;overflow: hidden;">
+                            <img src="https://github.com/hetube-lab/youtubegameimages/blob/main/flaguk.jpg?raw=true" style="width:100%">
+                        </div>
+                        <div id="pointuk" style="color:white;width:20px;text-align:center">0</div>
+                    </div>
+                    <div style="background-color:green;padding:5px;border-radius:20px;display: flex;margin:4px">
+                        <div style="height:20px;width:20px;border-radius: 50%;overflow: hidden;">
+                            <img src="https://github.com/hetube-lab/youtubegameimages/blob/main/flagusa.jpg?raw=true" style="width:100%">
+                        </div>
+                        <div id="pointusa" style="color:white;width:20px;text-align:center">0</div>
+                    </div>
+                    <div style="background-color:green;padding:5px;border-radius:20px;display: flex;margin:4px">
+                        <div style="height:20px;width:20px;border-radius: 50%;overflow: hidden;">
+                            <img src="https://github.com/hetube-lab/youtubegameimages/blob/main/flagchina.jpg?raw=true" style="width:100%">
+                        </div>
+                        <div id="pointchina" style="color:white;width:20px;text-align:center">0</div>
+                    </div>
+                    <div style="background-color:green;padding:5px;border-radius:20px;display: flex;margin:4px">
+                        <div style="height:20px;width:20px;border-radius: 50%;overflow: hidden;">
+                            <img src="https://github.com/hetube-lab/youtubegameimages/blob/main/flagjapan.jpg?raw=true" style="width:100%">
+                        </div>
+                        <div id="pointjapan" style="color:white;width:20px;text-align:center">0</div>
+                    </div>
+                    <div style="background-color:green;padding:5px;border-radius:20px;display: flex;margin:4px">
+                        <div style="height:20px;width:20px;border-radius: 50%;overflow: hidden;">
+                            <img src="https://github.com/hetube-lab/youtubegameimages/blob/main/flagrussia.jpg?raw=true" style="width:100%">
+                        </div>
+                        <div id="pointrussia" style="color:white;width:20px;text-align:center">0</div>
+                    </div>
+                    <div style="background-color:green;padding:5px;border-radius:20px;display: flex;margin:4px">
+                        <div style="height:20px;width:20px;border-radius: 50%;overflow: hidden;">
+                            <img src="https://github.com/hetube-lab/youtubegameimages/blob/main/flagqatar.jpg?raw=true" style="width:100%">
+                        </div>
+                        <div id="pointqatar" style="color:white;width:20px;text-align:center">0</div>
+                    </div>
+                </div>
+            </div>
+            <!----------------------------------------------->
+            
+            <!----------------------------------------------->
+            <div id="road" style="width:100%;overflow:hidden">
+                <div class="marquee-container" style="position:absolute;width:100%">
+                    <div class="marquee-content">
+                        <div style="display:inline-block;height:670px">
+                            <img src="https://github.com/hetube-lab/youtubegameimages/blob/main/road.jpg?raw=true" style="height:670px">
+                        </div>
+                        <div style="display:inline-block;height:670px;margin-left:-10px">
+                            <img src="https://github.com/hetube-lab/youtubegameimages/blob/main/road.jpg?raw=true" style="height:670px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!----------------------------------------------->
+            <div style="position:absolute;right:0;top:0;z-index:100;height:600px;margin-top:78px">
+                <img id="finishgrid" src="https://github.com/hetube-lab/youtubegameimages/blob/main/finish%20line.jpg?raw=true" style="height:435px;margin-top:51px">
+            </div> 
+            <!----------------------------------------------->
+            <div id="carracer1" class="cars caranimation" width="110px">
+                <div id="autherdisplay1" style="padding:5px;height:20px;border-radius: 5px;background-color:white;position:absolute;top:0;left:0;z-index:400;margin-left:-50px;opacity:0"></div>
+                <img class="cargrid-anim1" src="https://github.com/hetube-lab/youtubegameimages/blob/main/carind.png?raw=true" width="110px">
+            </div>
+            <div id="carracer2" class="cars caranimation" width="110px">
+                <div id="autherdisplay2" style="padding:5px;height:20px;border-radius: 5px;background-color:white;position:absolute;top:0;left:0;z-index:400;margin-left:-50px;opacity:0"></div>
+                <img class="cargrid-anim2" src="https://github.com/hetube-lab/youtubegameimages/blob/main/carpak.png?raw=true" width="110px">
+            </div>
+            <div id="carracer3" class="cars caranimation" width="110px">
+                <div id="autherdisplay3" style="padding:5px;height:20px;border-radius: 5px;background-color:white;position:absolute;top:0;left:0;z-index:400;margin-left:-50px;opacity:0"></div>
+                <img class="cargrid-anim3" src="https://github.com/hetube-lab/youtubegameimages/blob/main/caruk.png?raw=true" width="110px">
+            </div>
+            <div id="carracer4" class="cars caranimation" width="110px">
+                <div id="autherdisplay4" style="padding:5px;height:20px;border-radius: 5px;background-color:white;position:absolute;top:0;left:0;z-index:400;margin-left:-50px;opacity:0"></div>
+                <img class="cargrid-anim4" src="https://github.com/hetube-lab/youtubegameimages/blob/main/carusa.png?raw=true" width="110px">
+            </div>
+            <div id="carracer5" class="cars caranimation" width="110px">
+                <div id="autherdisplay5" style="padding:5px;height:20px;border-radius: 5px;background-color:white;position:absolute;top:0;left:0;z-index:400;margin-left:-50px;opacity:0"></div>
+                <img class="cargrid-anim2" src="https://github.com/hetube-lab/youtubegameimages/blob/main/carchin.png?raw=true" width="110px">
+            </div>
+            <div id="carracer6" class="cars caranimation" width="110px">
+                <div id="autherdisplay6" style="padding:5px;height:20px;border-radius: 5px;background-color:white;position:absolute;top:0;left:0;z-index:400;margin-left:-50px;opacity:0"></div>
+                <img class="cargrid-anim4" src="https://github.com/hetube-lab/youtubegameimages/blob/main/carjap.png?raw=true" width="110px">
+            </div>  
+            <div id="carracer7" class="cars caranimation" width="110px">
+                <div id="autherdisplay7" style="padding:5px;height:20px;border-radius: 5px;background-color:white;position:absolute;top:0;left:0;z-index:400;margin-left:-50px;opacity:0"></div>
+                <img class="cargrid-anim1" src="https://github.com/hetube-lab/youtubegameimages/blob/main/carrus.png?raw=true" width="110px">
+            </div>   
+            <div id="carracer8" class="cars caranimation" width="110px">
+                <div id="autherdisplay8" style="padding:5px;height:20px;border-radius: 5px;background-color:white;position:absolute;top:0;left:0;z-index:400;margin-left:-50px;opacity:0"></div>
+                <img class="cargrid-anim2" src="https://github.com/hetube-lab/youtubegameimages/blob/main/carqtr.png?raw=true" width="110px">
+            </div>        
+
+        </div> 
+        <audio loop id="audio1" src="https://github.com/hetube-lab/youtubegameimages/raw/refs/heads/main/carudio.mp3?raw=true" type="audio/mpeg">
+        </audio> 
+        </div> 

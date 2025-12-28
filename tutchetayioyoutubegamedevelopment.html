@@ -1,0 +1,445 @@
+<html>
+    <head>
+        <style>
+            
+            
+            .roboto {
+            font-family: "Roboto", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+            font-variation-settings:
+                "wdth" 100;
+            }
+            .cargrid-anim1{animation: horizontal-shaking 3s infinite}
+            .cargrid-anim2{animation: horizontal-shaking 2.7s infinite}
+            .cargrid-anim3{animation: horizontal-shaking 2.5s infinite}
+            .cargrid-anim4{animation: horizontal-shaking 2.8s infinite}
+
+
+            .cars{position:absolute;top:0;left:0;z-index:200;flex-shrink: 0;transition:1s}
+            .caranimation{animation:carsetmove 90s linear forwards}
+            #carracer1{margin-top:120px}
+            #carracer2{margin-top:172px}
+            #carracer3{margin-top:230px}
+            #carracer4{margin-top:288px}
+            #carracer5{margin-top:344px}
+            #carracer6{margin-top:399px}
+            #carracer7{margin-top:455px}
+            #carracer8{margin-top:513px}
+
+
+            .marquee-container {
+            overflow: hidden; /* Hides the duplicate content initially */
+            white-space: nowrap; /* Prevents text from wrapping to the next line */
+            display: flex; /* Uses flexbox for alignment */
+            box-sizing: border-box;
+            }
+
+            .marquee-content {
+            display: inline-block;
+            animation: scroll 4s linear infinite;
+            /* Ensures child items don't shrink, maintaining total width */
+            flex-shrink: 0; 
+            }
+            
+            /* Define the animation */
+            @keyframes scroll {
+            from {
+                transform: translateX(0); /* Start at original position */
+            }
+            to {
+                /* Move left by exactly half the total width (the width of one copy) */
+                transform: translateX(-50%); 
+            }
+            }
+            @keyframes horizontal-shaking {
+                0% { transform: translateY(0) }
+                25% { transform: translateY(2px) }
+                50% { transform: translateY(-2px) }
+                75% { transform: translateY(1px) }
+                100% { transform: translateY(0) }}
+
+
+            @keyframes carsetmove {
+                0% { transform: translateX(0) }
+                100% { transform: translateX(1600%) }
+            }
+        </style>
+    </head>
+
+
+
+
+    <body style="background-color:red">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <div id="containerforyoutube">
+            <div id="resultbox" style="transition:1s;opacity:0;width:100%;height:550px;background-color:rgba(0, 0, 0, 0.623);display: flex; align-items: center; justify-content: center;position:absolute;z-index:300;margin-top:100px">
+            <div style="width:300px;border-radius: 15px;background-color:rgba(0, 0, 0, 0.87);padding-top:50px;padding-bottom:50px">
+                
+                    <div style="width:100%;display:flex;justify-content: center;">
+                        <div style="width:80px;height:80px;border-radius: 50%;overflow: hidden">
+                        <img id="countryflag" src="" style="width:100%">
+                    </div>
+                    </div>
+                    <div style="width:100%;display:flex;justify-content: center;" class="roboto"><h1 id="countrydisplay" style="color:white"></h1></div>
+                
+            </div>
+        </div>
+            
+
+        <div id="main-container" style="width:100%;overflow:hidden;background-color: yellow;">
+            <div style="display:flex;justify-content: center;position: absolute; top:0;left:0;width:100%;z-index:1000;margin-top:50px">
+                <div style="background-color:rgba(0, 0, 0, 0.411);padding:5px;border-radius: 30px;display:flex">
+                    <div style="background-color:green;padding:5px;border-radius:20px;display: flex;margin:4px">
+                        <div style="height:20px;width:20px;border-radius: 50%;overflow: hidden;">
+                            <img src="https://github.com/hetube-lab/youtubegameimages/blob/main/flagind.jpg?raw=true" style="width:100%">
+                        </div>
+                        <div id="pointind" style="color:white;width:20px;text-align:center">0</div>
+                    </div>
+                    <div style="background-color:green;padding:5px;border-radius:20px;display: flex;margin:4px">
+                        <div style="height:20px;width:20px;border-radius: 50%;overflow: hidden;">
+                            <img src="https://github.com/hetube-lab/youtubegameimages/blob/main/flapak.jpg?raw=true" style="width:100%">
+                        </div>
+                        <div id="pointpak" style="color:white;width:20px;text-align:center">0</div>
+                    </div>
+                    <div style="background-color:green;padding:5px;border-radius:20px;display: flex;margin:4px">
+                        <div style="height:20px;width:20px;border-radius: 50%;overflow: hidden;">
+                            <img src="https://github.com/hetube-lab/youtubegameimages/blob/main/flaguk.jpg?raw=true" style="width:100%">
+                        </div>
+                        <div id="pointuk" style="color:white;width:20px;text-align:center">0</div>
+                    </div>
+                    <div style="background-color:green;padding:5px;border-radius:20px;display: flex;margin:4px">
+                        <div style="height:20px;width:20px;border-radius: 50%;overflow: hidden;">
+                            <img src="https://github.com/hetube-lab/youtubegameimages/blob/main/flagusa.jpg?raw=true" style="width:100%">
+                        </div>
+                        <div id="pointusa" style="color:white;width:20px;text-align:center">0</div>
+                    </div>
+                    <div style="background-color:green;padding:5px;border-radius:20px;display: flex;margin:4px">
+                        <div style="height:20px;width:20px;border-radius: 50%;overflow: hidden;">
+                            <img src="https://github.com/hetube-lab/youtubegameimages/blob/main/flagchina.jpg?raw=true" style="width:100%">
+                        </div>
+                        <div id="pointchina" style="color:white;width:20px;text-align:center">0</div>
+                    </div>
+                    <div style="background-color:green;padding:5px;border-radius:20px;display: flex;margin:4px">
+                        <div style="height:20px;width:20px;border-radius: 50%;overflow: hidden;">
+                            <img src="https://github.com/hetube-lab/youtubegameimages/blob/main/flagjapan.jpg?raw=true" style="width:100%">
+                        </div>
+                        <div id="pointjapan" style="color:white;width:20px;text-align:center">0</div>
+                    </div>
+                    <div style="background-color:green;padding:5px;border-radius:20px;display: flex;margin:4px">
+                        <div style="height:20px;width:20px;border-radius: 50%;overflow: hidden;">
+                            <img src="https://github.com/hetube-lab/youtubegameimages/blob/main/flagrussia.jpg?raw=true" style="width:100%">
+                        </div>
+                        <div id="pointrussia" style="color:white;width:20px;text-align:center">0</div>
+                    </div>
+                    <div style="background-color:green;padding:5px;border-radius:20px;display: flex;margin:4px">
+                        <div style="height:20px;width:20px;border-radius: 50%;overflow: hidden;">
+                            <img src="https://github.com/hetube-lab/youtubegameimages/blob/main/flagqatar.jpg?raw=true" style="width:100%">
+                        </div>
+                        <div id="pointqatar" style="color:white;width:20px;text-align:center">0</div>
+                    </div>
+                </div>
+            </div>
+            <!----------------------------------------------->
+            
+            <!----------------------------------------------->
+            <div id="road" style="width:100%;overflow:hidden">
+                <div class="marquee-container" style="position:absolute;width:100%">
+                    <div class="marquee-content">
+                        <div style="display:inline-block;height:670px">
+                            <img src="https://github.com/hetube-lab/youtubegameimages/blob/main/road.jpg?raw=true" style="height:670px">
+                        </div>
+                        <div style="display:inline-block;height:670px;margin-left:-10px">
+                            <img src="https://github.com/hetube-lab/youtubegameimages/blob/main/road.jpg?raw=true" style="height:670px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!----------------------------------------------->
+            <div style="position:absolute;right:0;top:0;z-index:100;height:600px;margin-top:78px">
+                <img id="finishgrid" src="https://github.com/hetube-lab/youtubegameimages/blob/main/finish%20line.jpg?raw=true" style="height:435px;margin-top:51px">
+            </div> 
+            <!----------------------------------------------->
+            <div id="carracer1" class="cars caranimation" width="110px">
+                <div id="autherdisplay1" style="padding:5px;height:20px;border-radius: 5px;background-color:white;position:absolute;top:0;left:0;z-index:400;margin-left:-50px;opacity:0"></div>
+                <img class="cargrid-anim1" src="https://github.com/hetube-lab/youtubegameimages/blob/main/carind.png?raw=true" width="110px">
+            </div>
+            <div id="carracer2" class="cars caranimation" width="110px">
+                <div id="autherdisplay2" style="padding:5px;height:20px;border-radius: 5px;background-color:white;position:absolute;top:0;left:0;z-index:400;margin-left:-50px;opacity:0"></div>
+                <img class="cargrid-anim2" src="https://github.com/hetube-lab/youtubegameimages/blob/main/carpak.png?raw=true" width="110px">
+            </div>
+            <div id="carracer3" class="cars caranimation" width="110px">
+                <div id="autherdisplay3" style="padding:5px;height:20px;border-radius: 5px;background-color:white;position:absolute;top:0;left:0;z-index:400;margin-left:-50px;opacity:0"></div>
+                <img class="cargrid-anim3" src="https://github.com/hetube-lab/youtubegameimages/blob/main/caruk.png?raw=true" width="110px">
+            </div>
+            <div id="carracer4" class="cars caranimation" width="110px">
+                <div id="autherdisplay4" style="padding:5px;height:20px;border-radius: 5px;background-color:white;position:absolute;top:0;left:0;z-index:400;margin-left:-50px;opacity:0"></div>
+                <img class="cargrid-anim4" src="https://github.com/hetube-lab/youtubegameimages/blob/main/carusa.png?raw=true" width="110px">
+            </div>
+            <div id="carracer5" class="cars caranimation" width="110px">
+                <div id="autherdisplay5" style="padding:5px;height:20px;border-radius: 5px;background-color:white;position:absolute;top:0;left:0;z-index:400;margin-left:-50px;opacity:0"></div>
+                <img class="cargrid-anim2" src="https://github.com/hetube-lab/youtubegameimages/blob/main/carchin.png?raw=true" width="110px">
+            </div>
+            <div id="carracer6" class="cars caranimation" width="110px">
+                <div id="autherdisplay6" style="padding:5px;height:20px;border-radius: 5px;background-color:white;position:absolute;top:0;left:0;z-index:400;margin-left:-50px;opacity:0"></div>
+                <img class="cargrid-anim4" src="https://github.com/hetube-lab/youtubegameimages/blob/main/carjap.png?raw=true" width="110px">
+            </div>  
+            <div id="carracer7" class="cars caranimation" width="110px">
+                <div id="autherdisplay7" style="padding:5px;height:20px;border-radius: 5px;background-color:white;position:absolute;top:0;left:0;z-index:400;margin-left:-50px;opacity:0"></div>
+                <img class="cargrid-anim1" src="https://github.com/hetube-lab/youtubegameimages/blob/main/carrus.png?raw=true" width="110px">
+            </div>   
+            <div id="carracer8" class="cars caranimation" width="110px">
+                <div id="autherdisplay8" style="padding:5px;height:20px;border-radius: 5px;background-color:white;position:absolute;top:0;left:0;z-index:400;margin-left:-50px;opacity:0"></div>
+                <img class="cargrid-anim2" src="https://github.com/hetube-lab/youtubegameimages/blob/main/carqtr.png?raw=true" width="110px">
+            </div>        
+
+        </div>  
+        </div> 
+        <audio loop id="audio1" src="https://github.com/hetube-lab/youtubegameimages/raw/refs/heads/main/carudio.mp3?raw=true" type="audio/mpeg">
+        </audio>
+        
+            
+       
+        
+        
+        
+    </body>
+    <script> 
+    var indx=0;
+    var pakx=0;
+    var ukx=0;
+    var usax=0;
+    var chinax=0;
+    var japx=0;
+    var rusx=0;
+    var qtrx=0;
+    var commentvalue="";
+    var pointind=0;
+    var pointpak=0;
+    var pointuk=0;
+    var pointusa=0;
+    var pointchina=0;
+    var pointjapan=0;
+    var pointrussia=0;
+    var pointqatar=0;
+    function zz(tutuc,tutuauth){
+
+        var min = 50;
+        var max = 90;
+        
+        var movevalue=Math.floor(Math.random() * (max - min + 1)) + min
+        
+            
+            
+            if(tutuc=='ind'){document.getElementById('autherdisplay1').innerText=tutuauth;document.getElementById('autherdisplay1').style.opacity=1;indx=(indx+movevalue);document.getElementById('carracer1').style.marginLeft=indx+"px";setTimeout(() => {
+                document.getElementById('autherdisplay1').style.opacity=0;                
+            }, 2000);}
+            if(tutuc=='pak'){document.getElementById('autherdisplay2').innerText=tutuauth;document.getElementById('autherdisplay2').style.opacity=1;pakx=(pakx+movevalue);document.getElementById('carracer2').style.marginLeft=pakx+"px";setTimeout(() => {
+                document.getElementById('autherdisplay2').style.opacity=0;                
+            }, 2000);}
+            if(tutuc=='uk'){document.getElementById('autherdisplay3').innerText=tutuauth;document.getElementById('autherdisplay3').style.opacity=1;ukx=(ukx+movevalue);document.getElementById('carracer3').style.marginLeft=ukx+"px";setTimeout(() => {
+                document.getElementById('autherdisplay3').style.opacity=0;                
+            }, 2000);}
+            if(tutuc=='usa'){document.getElementById('autherdisplay4').innerText=tutuauth;document.getElementById('autherdisplay4').style.opacity=1;usax=(usax+movevalue);document.getElementById('carracer4').style.marginLeft=usax+"px";setTimeout(() => {
+                document.getElementById('autherdisplay4').style.opacity=0;                
+            }, 2000);}
+            if(tutuc=='chi'){document.getElementById('autherdisplay5').innerText=tutuauth;document.getElementById('autherdisplay5').style.opacity=1;chinax=(chinax+movevalue);document.getElementById('carracer5').style.marginLeft=chinax+"px";setTimeout(() => {
+                document.getElementById('autherdisplay5').style.opacity=0;                
+            }, 2000);}
+            if(tutuc=='jap'){document.getElementById('autherdisplay6').innerText=tutuauth;document.getElementById('autherdisplay6').style.opacity=1;japx=(japx+movevalue);document.getElementById('carracer6').style.marginLeft=japx+"px";setTimeout(() => {
+                document.getElementById('autherdisplay6').style.opacity=0;                
+            }, 2000);}
+            if(tutuc=='rus'){document.getElementById('autherdisplay7').innerText=tutuauth;document.getElementById('autherdisplay7').style.opacity=1;rusx=(rusx+movevalue);document.getElementById('carracer7').style.marginLeft=rusx+"px";setTimeout(() => {
+                document.getElementById('autherdisplay7').style.opacity=0;                
+            }, 2000);}
+            if(tutuc=='qtr'){document.getElementById('autherdisplay8').innerText=tutuauth;document.getElementById('autherdisplay8').style.opacity=1;qtrx=(qtrx+movevalue);document.getElementById('carracer8').style.marginLeft=qtrx+"px";setTimeout(() => {
+                document.getElementById('autherdisplay8').style.opacity=0;                
+            }, 2000);}
+
+
+            }        
+       
+    
+    var finalgrid=""
+    var k=0;    
+
+function checkPosition() {
+    finalgrid=document.getElementById('finishgrid').getBoundingClientRect();
+    var carpos1=document.getElementById('carracer1').getBoundingClientRect();
+    var carpos2=document.getElementById('carracer2').getBoundingClientRect();
+    var carpos3=document.getElementById('carracer3').getBoundingClientRect();
+    var carpos4=document.getElementById('carracer4').getBoundingClientRect();
+    var carpos5=document.getElementById('carracer5').getBoundingClientRect();
+    var carpos6=document.getElementById('carracer6').getBoundingClientRect();
+    var carpos7=document.getElementById('carracer7').getBoundingClientRect();
+    var carpos8=document.getElementById('carracer8').getBoundingClientRect();
+  
+   if(
+       
+        carpos1.right >= finalgrid.left ||
+        carpos2.right >= finalgrid.left ||
+        carpos3.right >= finalgrid.left ||
+        carpos4.right >= finalgrid.left ||
+        carpos5.right >= finalgrid.left ||
+        carpos6.right >= finalgrid.left ||
+        carpos7.right >= finalgrid.left ||
+        carpos8.right >= finalgrid.left){
+            document.getElementById('audio1').pause();
+            var finalscore=[carpos1.right,carpos2.right,carpos3.right,carpos4.right,carpos5.right,carpos6.right,carpos7.right,carpos8.right]
+            const maxValue = Math.max(...finalscore);
+            const maxIndex = finalscore.indexOf(maxValue);
+            if(maxIndex==0 && (carpos2.right==carpos1.right)){document.getElementById('countrydisplay').innerText='RE MATCHING';document.getElementById('countryflag').src='https://icons.veryicon.com/png/o/miscellaneous/text-editing/redo-21.png'}
+            if(maxIndex==0 && (carpos2.right!=carpos1.right)){document.getElementById('countrydisplay').innerText='INDIA WON';document.getElementById('countryflag').src='https://github.com/hetube-lab/youtubegameimages/blob/main/flagind.jpg?raw=true';pointind=pointind+1;document.getElementById('pointind').innerText=pointind;}
+            if(maxIndex==1){document.getElementById('countrydisplay').innerText='PAKISTHAN WON';document.getElementById('countryflag').src='https://github.com/hetube-lab/youtubegameimages/blob/main/flapak.jpg?raw=true';pointpak=pointpak+1;document.getElementById('pointpak').innerText=pointpak}
+            if(maxIndex==2){document.getElementById('countrydisplay').innerText='UK WON';document.getElementById('countryflag').src='https://github.com/hetube-lab/youtubegameimages/blob/main/flaguk.jpg?raw=true';pointuk=pointuk+1;document.getElementById('pointuk').innerText=pointuk}
+            if(maxIndex==3){document.getElementById('countrydisplay').innerText='USA WON';document.getElementById('countryflag').src='https://github.com/hetube-lab/youtubegameimages/blob/main/flagusa.jpg?raw=true';pointusa=pointusa+1;document.getElementById('pointusa').innerText=pointusa}
+            if(maxIndex==4){document.getElementById('countrydisplay').innerText='CHINA WON';document.getElementById('countryflag').src='https://github.com/hetube-lab/youtubegameimages/blob/main/flagchina.jpg?raw=true';pointchina=pointchina+1;document.getElementById('pointchina').innerText=pointchina}
+            if(maxIndex==5){document.getElementById('countrydisplay').innerText='JAPAN WON';document.getElementById('countryflag').src='https://github.com/hetube-lab/youtubegameimages/blob/main/flagjapan.jpg?raw=true';pointjapan=pointjapan+1;document.getElementById('pointjapan').innerText=pointjapan}
+            if(maxIndex==6){document.getElementById('countrydisplay').innerText='RUSSIA WON';document.getElementById('countryflag').src='https://github.com/hetube-lab/youtubegameimages/blob/main/flagrussia.jpg?raw=true';pointrussia=pointrussia+1;document.getElementById('pointrussia').innerText=pointrussia}
+            if(maxIndex==7){document.getElementById('countrydisplay').innerText='QATAR WON';document.getElementById('countryflag').src='https://github.com/hetube-lab/youtubegameimages/blob/main/flagqatar.jpg?raw=true';pointqatar=pointqatar+1;document.getElementById('pointqatar').innerText=pointqatar}
+            k=1;
+            document.getElementById('carracer1').style.animationPlayState="paused";
+            document.getElementById('carracer2').style.animationPlayState="paused";
+            document.getElementById('carracer3').style.animationPlayState="paused";
+            document.getElementById('carracer4').style.animationPlayState="paused";
+            document.getElementById('carracer5').style.animationPlayState="paused";
+            document.getElementById('carracer6').style.animationPlayState="paused";
+            document.getElementById('carracer7').style.animationPlayState="paused";
+            document.getElementById('carracer8').style.animationPlayState="paused";
+            document.getElementsByClassName('marquee-content')[0].style.animationPlayState='paused';
+            document.getElementById('resultbox').style.opacity=1;
+            setTimeout(() => {
+                                document.getElementById('carracer1').style.display='none';
+                                document.getElementById('carracer2').style.display='none';
+                                document.getElementById('carracer3').style.display='none';
+                                document.getElementById('carracer4').style.display='none';
+                                document.getElementById('carracer5').style.display='none';
+                                document.getElementById('carracer6').style.display='none';
+                                document.getElementById('carracer7').style.display='none';
+                                document.getElementById('carracer8').style.display='none';
+                                document.getElementById('carracer1').classList.remove('caranimation');
+                                document.getElementById('carracer2').classList.remove('caranimation');
+                                document.getElementById('carracer3').classList.remove('caranimation');
+                                document.getElementById('carracer4').classList.remove('caranimation');
+                                document.getElementById('carracer5').classList.remove('caranimation');
+                                document.getElementById('carracer6').classList.remove('caranimation');
+                                document.getElementById('carracer7').classList.remove('caranimation');
+                                document.getElementById('carracer8').classList.remove('caranimation');
+                                document.getElementById('carracer1').style.marginLeft=0;
+                                document.getElementById('carracer2').style.marginLeft=0;
+                                document.getElementById('carracer3').style.marginLeft=0;
+                                document.getElementById('carracer4').style.marginLeft=0;
+                                document.getElementById('carracer5').style.marginLeft=0;
+                                document.getElementById('carracer6').style.marginLeft=0;
+                                document.getElementById('carracer7').style.marginLeft=0;
+                                document.getElementById('carracer8').style.marginLeft=0;
+                                
+                            }, 3100);
+            setTimeout(() => {
+                                document.getElementById('carracer1').style.display='block';
+                                document.getElementById('carracer2').style.display='block';
+                                document.getElementById('carracer3').style.display='block';
+                                document.getElementById('carracer4').style.display='block';
+                                document.getElementById('carracer5').style.display='block';
+                                document.getElementById('carracer6').style.display='block';
+                                document.getElementById('carracer7').style.display='block';
+                                document.getElementById('carracer8').style.display='block';
+                                document.getElementById('carracer1').classList.add('caranimation');
+                                document.getElementById('carracer2').classList.add('caranimation');
+                                document.getElementById('carracer3').classList.add('caranimation');
+                                document.getElementById('carracer4').classList.add('caranimation');
+                                document.getElementById('carracer5').classList.add('caranimation');
+                                document.getElementById('carracer6').classList.add('caranimation');
+                                document.getElementById('carracer7').classList.add('caranimation');
+                                document.getElementById('carracer8').classList.add('caranimation');
+                                document.getElementById('carracer1').style.animationPlayState="running";
+                                document.getElementById('carracer2').style.animationPlayState="running";
+                                document.getElementById('carracer3').style.animationPlayState="running";
+                                document.getElementById('carracer4').style.animationPlayState="running";
+                                document.getElementById('carracer5').style.animationPlayState="running";
+                                document.getElementById('carracer6').style.animationPlayState="running";
+                                document.getElementById('carracer7').style.animationPlayState="running";
+                                document.getElementById('carracer8').style.animationPlayState="running";
+                                document.getElementsByClassName('marquee-content')[0].style.animationPlayState='running';
+                                document.getElementById('resultbox').style.opacity=0;
+                                k=0;
+                                indx=0;
+                                pakx=0;
+                                usax=0;
+                                ukx=0;
+                                chinax=0;
+                                japx=0;
+                                rusx=0;
+                                qtrx=0;
+                                document.getElementById('audio1').play();
+                                requestAnimationFrame(checkPosition);
+                            }, 5100);        
+            
+            
+        }
+  // Do something with the position
+
+  // Continuously check on each animation frame
+        if(k==0){
+            requestAnimationFrame(checkPosition);
+        }
+        
+    }
+
+
+
+
+
+const targetDiv = document.getElementById('items');
+const observer = new MutationObserver(function(mutationsList) {
+        for (const mutation of mutationsList) {
+            if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                changefound();
+            }
+        }
+    });
+
+
+    function changefound() {
+    'use strict';
+    const parentElement = document.getElementById('items');
+    const lastChildElement = parentElement.lastChild;
+    const commentfindid="#"+lastChildElement.id+' #message';
+    const commentfind = document.querySelector(commentfindid);
+    const tutucomment=commentfind.innerText
+    if(tutucomment=='ind'||tutucomment=='pak'||tutucomment=='uk'||tutucomment=='usa'||tutucomment=='chi'||tutucomment=='jap'||tutucomment=='rus'||tutucomment=='qtr'){
+        const autherfindid="#"+lastChildElement.id+' #author-name';
+        const autherfind=document.querySelector(autherfindid);
+        const tutuauther=autherfind.innerText;
+        zz(tutucomment,tutuauther);
+
+    }
+    }
+
+
+    
+    setTimeout(() => {
+        requestAnimationFrame(checkPosition);
+        document.getElementById('audio1').play();
+                    }, 60000);
+    const config = { childList: true };
+    observer.observe(targetDiv, config);
+
+
+
+
+
+
+    
+
+
+
+    </script>
+    <div id="items"></div>
+</html>
+
+
+            
